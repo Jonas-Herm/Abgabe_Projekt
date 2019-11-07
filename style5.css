@@ -1,0 +1,27 @@
+body{
+  background:  snow;
+
+}
+
+#part_5  img.hintergrund {
+  display: block; z-index:-20;
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+     }
+#part_5{
+       background: rgba(211,211,211,0.8);
+       border-radius: 5px;
+       text-align: center;
+     }
+
+#update{
+  text-align: left;
+  display: inline-grid;
+  padding: 20px;
+  margin: 30px;
+}

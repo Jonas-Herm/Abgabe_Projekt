@@ -1,0 +1,99 @@
+body{
+  background:  snow;
+
+}
+
+nav {
+  font-size: 16pt;
+  font-family: arial;
+  color: white;
+  background-color: black ;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px grey;
+  margin: 10px;
+}
+
+nav ul{
+  list-style: none;
+}
+
+nav li {
+ display: inline-flex;
+}
+
+li a {
+  color: white;
+  padding: 15px 120px;
+  text-decoration: none;
+  text-shadow: 2px 2px grey;
+
+}
+
+
+/* 4.Teil */
+
+#part_4{
+  background: rgba(211,211,211,0.8);
+  border-radius: 5px;
+}
+
+#part_4 h1 {
+  font-size: 30px;
+  text-align: center;
+  padding-top: 15px;
+  border-bottom: 6px solid black;
+}
+
+#part_4 h2{
+  font-size: 18px;
+  text-align: left;
+  padding-top: 20px;
+  border-bottom: 2px dotted black;
+}
+
+#part_4 h3{
+    border-bottom: 2px solid black;
+}
+
+#part_4 ul{
+  list-style: none;
+  float: left;
+}
+#part_4  img.hintergrund {
+  display: block; z-index:-20;
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+     }
+
+
+#part_4 form{
+  display: inline-grid;
+  padding: 20px;
+  margin: 30px;
+}
+
+#part_4  h4 {
+    border-top: 2px dotted black;
+    padding-top: 10px;
+}
+
+#part_4 input{
+background-color: black;
+border: none;
+color: white;
+padding: 8px 16px;
+text-decoration: none;
+display: inline-block;
+font-size: 14px;
+border-radius: 8px;
+}
+
+#part_4 div{
+  text-align: right;
+  padding-right: 30px;
+}

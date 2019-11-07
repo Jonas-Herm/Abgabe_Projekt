@@ -1,0 +1,55 @@
+body{
+  background:  snow;
+
+}
+
+nav {
+  font-size: 16pt;
+  font-family: arial;
+  color: white;
+  background-color: black ;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px grey;
+  margin: 10px;
+}
+
+nav ul{
+  list-style: none;
+}
+
+nav li {
+ display: inline-flex;
+}
+
+li a {
+  color: white;
+  padding: 15px 120px;
+  text-decoration: none;
+  text-shadow: 2px 2px grey;
+
+}
+
+
+#part_1  img.hintergrund {
+  display: block; z-index:-20;
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+     }
+
+#part_1 h1{
+
+  text-align: center;
+  margin-top: 10.5em;
+  font-size: 30px;
+}
+
+#part_1 div{
+
+  text-align: center;
+  margin-top: 1em;
+}
