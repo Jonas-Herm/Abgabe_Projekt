@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Glohsreiche Reisen 🌞</title>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+	<script src="init.js"></script>
+	<script>
+		if (document.location.hash == "" || document.location.hash == "#")
+		document.location.hash = "#part_1";
+	</script>
+	<style>
+      section:not(:target):not(#navigation){
+	  display:none
+	  }
+      section:target {
+        display: block
+      }
+   </style>
+    </head>
+<body>
+  <header>
+  <nav>
+  	<ul id="navigation">
+  		<li><a href="#part_1">Startseite</a></li>
+  		<li><a id="reiseziele" href="#part_2">Reiseziele</a></li>
+  		<li><a href="#part_3">Reiseziele hinzufügen</a></li>
+      <li><a href="#part_4">Suche</a></li>
+  	</ul>
+  </nav>
+</header>
+
+  <section id="part_1">
+    <link rel="stylesheet" href="style1.css">
+    <p> <img class = "hintergrund" src="https://www.radiogong.de/website/var/tmp/image-thumbnails/140000/147351/thumb__gallery-image/iceman.png"
+    alt="hintergrundbild"/>
+    </p>
+      <h1>GLOHSREICHE REISEN 🌞</h1>
+    <div> <label for="suche">Reiseziel eingeben</label>
+  <input type="search" id="suche" placeholder="Suche¦">
+  </div>
+  </section>
+
+  <section id="part_2">
+    <link rel="stylesheet" href="style2.css">
+    <p> <img class = "hintergrund" src="https://mediafiles.urlaubsguru.de/wp-content/uploads/2016/05/horseshoe-falls-canada-istock_000070041445_large-2.jpg"
+    alt="hintergrundbild"/>
+    </p>
+
+        <header>
+
+          <h1> Hier können Sie sich Reiseziele anschauen, bearbeiten und löschen! </h1>
+
+
+        </header>
+
+
+        <main>
+
+          <h2>  Bereits angelegte Urlaubsorte  </h2>
+		  <p id = "test">
+		  <script>makeList()</script>
+		  </p>
+        </main>
+       </section>
+
+  <section id="part_3">
+         <link rel="stylesheet" href="style3.css">
+         <p> <img class = "hintergrund" src="https://www.noz.de/article/teaser/1881701/full"
+         alt="hintergrundbild"/>
+         </p>
+         <h1>Neues Reiseziel hinzufügen</h1>
+         <h2> </h2>
+         <br>
+         <br>
+         <br>
+         <br>
+         <div>
+           <input type = "textfield" placeholder="Hier ein Land eingeben z. B. Deutschland" id="countryname"/>
+		   <button id="addButton"> Hinzufügen</button>
+         </div>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       </section>
+
+  <section id="part_4">
+
+         <link rel="stylesheet" href="style4.css">
+         <p> <img class = "hintergrund" src="https://cdn1.spiegel.de/images/image-1243725-860_poster_16x9-gtur-1243725.jpg"
+         alt="hintergrundbild"/>
+         </p>
+           <h1>Finden Sie ihr passendes Reiseziel</h1>
+
+           <h2> Benutzen Sie darunterliegende Filtermöglichkeiten, um ihr bevorzugtes Reiseziel zu finden: </h2>
+            <form>
+
+             <ul>
+               <li> <h3>Meerzugang</h3> </li>
+               <li>
+                 <label>
+                   <input type="checkbox" name="Meerzugang" value="ja">
+                   Ja
+                 </label>
+               </li>
+               <li>
+                 <label>
+                   <input type="checkbox" name="Meerzugang" value="nein">
+                   Nein
+                 </label>
+               </li>
+             </ul>
+           </form>
+           <form>
+             <ul>
+               <li> <h3> Temperatur </h3> </li>
+               <li>
+                 <label>
+                   <input type="checkbox" name="Temperatur" value="warm">
+                   warm
+                 </label>
+               </li>
+               <li>
+                 <label>
+                   <input type="checkbox" name="Temperatur" value="mäßig">
+                   mäßig
+                 </label>
+               </li>
+               <li>
+                 <label>
+                   <input type="checkbox" name="Temperatur" value="kalt">
+                   kalt
+                 </label>
+               </li>
+             </ul>
+           </form>
+           <form>
+                 <ul>
+                   <li> <h3> Art des Urlaubs </h3> </li>
+                    <li>
+                     <label>
+                       <input type="checkbox" name="Wanderurlaub" value="ja">
+                       Wanderurlaub
+                     </label>
+                   </li>
+                   <li>
+                     <label>
+                       <input type="checkbox" name="Skiurlaub" value="ja">
+                       Skiurlaub
+                     </label>
+                   </li>
+                   <li>
+                     <label>
+                       <input type="checkbox" name="Badeurlaub" value="ja">
+                       Badeurlaub
+                     </label>
+                   </li>
+               </ul>
+           </form>
+           <form>
+             <ul>
+               <li> <h3>Kontinent</h3> </li>
+               <li>
+                 <label>
+                   <input type="checkbox" name="Kontinent" value="europa">
+                   Europa
+                 </label>
+               </li>
+               <li>
+                 <label>
+                   <input type="checkbox" name="Kontinent" value="asien">
+                   Asien
+                 </label>
+               </li>
+               <li>
+                 <label>
+                   <input type="checkbox" name="Kontinent" value="nordamerika">
+                   Nordamerika
+                 </label>
+               </li>
+               <li>
+                 <label>
+                   <input type="checkbox" name="Kontinent" value="südamerika">
+                   Südamerika
+                 </label>
+               </li>
+               <li>
+                 <label>
+                   <input type="checkbox" name="Kontinent" value="afrika">
+                   Afrika
+                 </label>
+               </li>
+               <li>
+                 <label>
+                   <input type="checkbox" name="Kontinent" value="australien & ozeanien">
+                   Australien & Ozeanien
+                 </label>
+               </li>
+             </ul>
+           </form>
+           <form>
+             <ul>
+               <li> <h3>Insel</h3> </li>
+               <li>
+                 <label>
+                   <input type="checkbox" name="Insel" value="ja">
+                   Ja
+                 </label>
+               </li>
+               <li>
+                 <label>
+                   <input type="checkbox" name="Insel" value="nein">
+                   Nein
+                 </label>
+               </li>
+             </ul>
+           </form>
+           <form>
+             <ul>
+               <li> <h3> Gefahrenstufe </h3> </li>
+               <li>
+                 <label>
+                   <input type="checkbox" name="Gefahrenstufe" value="kritisch">
+                   kritisch
+                 </label>
+               </li>
+               <li>
+                 <label>
+                   <input type="checkbox" name="Gefahrenstufe" value="teilweise kritisch">
+                   teilweise kritisch
+                 </label>
+               </li>
+               <li>
+                 <label>
+                   <input type="checkbox" name="Gefahrenstufe" value="unkritisch">
+                   unkritisch
+                 </label>
+               </li>
+             </ul>
+           </form>
+           <div>
+             <input type = "button" value = "Senden"/>
+           </div>
+           <br>
+            <h4> Hier werden die gefundenen Reiseziele ausgegeben: </h4>
+           <br>
+           <output name="reiseziele"></output>
+         </section>
+
+  <section id="part_5">
+    <link rel="stylesheet" href="style5.css">
+    <p> <img class = "hintergrund" src="https://mediafiles.urlaubsguru.de/wp-content/uploads/2016/05/horseshoe-falls-canada-istock_000070041445_large-2.jpg"
+    alt="hintergrundbild"/>
+    </p>
+
+	<p id="update">
+
+
+	</p>
+
+	<script src="app.js"></script>
+   </body>
+</html>
