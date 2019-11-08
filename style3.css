@@ -81,3 +81,36 @@ li a {
   border-radius: 8px;
   box-shadow: 10px 10px 5px grey;
 }
+
+
+
+/* Anpassung für kleiner Bildschirmgrößen (als Orientierung: Galaxy S9) */
+@media (max-width: 500px) {
+  li a {
+    color: white;
+    padding: 10px 50px;
+    text-decoration: none;
+    text-shadow: 2px 2px grey;
+
+  }
+
+  nav {
+    font-size: 14pt;
+  }
+
+  #part_3 h1 {
+    font-size: 25px;
+  }
+
+  #part_3 input{
+    width: 80%;
+    box-shadow: 5px 5px 5px grey;
+  }
+
+  #addButton{
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px grey;
+  }
+
+}

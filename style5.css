@@ -2,6 +2,32 @@ body{
   background:  snow;
 
 }
+nav {
+  font-size: 16pt;
+  font-family: arial;
+  color: white;
+  background-color: black ;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px grey;
+  margin: 10px;
+}
+
+nav ul{
+  list-style: none;
+}
+
+nav li {
+ display: inline-flex;
+}
+
+li a {
+  color: white;
+  padding: 15px 120px;
+  text-decoration: none;
+  text-shadow: 2px 2px grey;
+
+}
+
 
 #part_5  img.hintergrund {
   display: block; z-index:-20;
@@ -24,4 +50,21 @@ body{
   display: inline-grid;
   padding: 20px;
   margin: 30px;
+}
+
+
+/* Anpassung für kleiner Bildschirmgrößen (als Orientierung: Galaxy S9) */
+@media (max-width: 500px) {
+  li a {
+    color: white;
+    padding: 10px 50px;
+    text-decoration: none;
+    text-shadow: 2px 2px grey;
+
+  }
+
+  nav {
+    font-size: 14pt;
+  }
+
 }

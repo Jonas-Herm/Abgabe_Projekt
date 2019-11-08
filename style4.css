@@ -97,3 +97,29 @@ border-radius: 8px;
   text-align: right;
   padding-right: 30px;
 }
+
+
+
+/* Anpassung für kleiner Bildschirmgrößen (als Orientierung: Galaxy S9) */
+@media (max-width: 500px) {
+  li a {
+    color: white;
+    padding: 10px 50px;
+    text-decoration: none;
+    text-shadow: 2px 2px grey;
+  }
+
+  nav {
+    font-size: 14pt;
+  }
+
+  #part_4 h1 {
+    font-size: 25px;
+  }
+
+  #part_4 form{
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }
+
+}

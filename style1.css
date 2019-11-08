@@ -1,3 +1,4 @@
+/* Format für einen normalen Bildschirm*/
 body{
   background:  snow;
 
@@ -52,4 +53,29 @@ li a {
 
   text-align: center;
   margin-top: 1em;
+}
+
+/* Anpassung für kleiner Bildschirmgrößen (als Orientierung: Galaxy S9) */
+@media (max-width: 500px) {
+  li a {
+    color: white;
+    padding: 10px 50px;
+    text-decoration: none;
+    text-shadow: 2px 2px grey;
+
+  }
+
+  nav {
+    font-size: 14pt;
+  }
+
+  #part_1 h1{
+    margin-top: 2em;
+    font-size: 30px;
+  }
+
+  #part_1  img.hintergrund {
+    min-width: 824px;
+       }
+
 }
