@@ -13,12 +13,13 @@
   var firestore = firebase.firestore();
 
 function makeList() {
-  firestore.collection("Test123")
+	 firestore.collection("Test123")
     .get()
     .then(function(querySnapshot) {
         var data = querySnapshot.docs.map(function (documentSnapshot) {
 		return documentSnapshot.data();
 		});
+		window.scroll(0,0);
 		writeList(data);
 		})
     .catch(function(error) {
@@ -26,6 +27,7 @@ function makeList() {
     });
 	}
 function writeList(data){
+
     numberOfListItems = data.length;
     document.getElementById("test").innerHTML = "";
 
@@ -41,7 +43,7 @@ function writeList(data){
 			showSpecificCountry(this.id);
 		};
 		document.getElementById("test").appendChild(para2);
-  
+
 		var para3 = document.createElement("BUTTON");
 		para3.id = data[i].Name;
 		para3.onclick = function(){
@@ -49,8 +51,6 @@ function writeList(data){
 		};
 		para3.innerText = "Löschen";
 		document.getElementById("test").appendChild(para3);
-
-
 
 		para4 = document.createElement("BR");
 		document.getElementById("test").appendChild(para4);

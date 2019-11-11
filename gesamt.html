@@ -26,14 +26,14 @@
   		<li><a href="#part_1">Startseite</a></li>
   		<li><a id="reiseziele" href="#part_2">Reiseziele</a></li>
   		<li><a href="#part_3">Reiseziele hinzufügen</a></li>
-      <li><a href="#part_4">Suche</a></li>
+      <li><a id ="reisesuche" href="#part_4">Suche</a></li>
   	</ul>
   </nav>
 </header>
 
   <section id="part_1">
     <link rel="stylesheet" href="style1.css">
-    <p> <img class = "hintergrund" src="Bild_Startseite.jpg"
+    <p> <img class = "hintergrund" src="https://www.radiogong.de/website/var/tmp/image-thumbnails/140000/147351/thumb__gallery-image/iceman.png"
     alt="hintergrundbild"/>
     </p>
       <h1>GLOHSREICHE REISEN 🌞</h1>
@@ -44,24 +44,30 @@
 
   <section id="part_2">
     <link rel="stylesheet" href="style2.css">
-    <p> <img class = "hintergrund" src="Bild_Seite2.jpg"
+    <p> <img class = "hintergrund" src="https://mediafiles.urlaubsguru.de/wp-content/uploads/2016/05/horseshoe-falls-canada-istock_000070041445_large-2.jpg"
     alt="hintergrundbild"/>
     </p>
+
         <header>
+
           <h1> Hier können Sie sich Reiseziele anschauen, bearbeiten und löschen! </h1>
+
+
         </header>
 
+
         <main>
+
           <h2>  Bereits angelegte Urlaubsorte  </h2>
-		        <p id = "test">
-		            <script>makeList()</script>
-		        </p>
+		  <p id = "test">
+		  <script>makeList()</script>
+		  </p>
         </main>
        </section>
 
   <section id="part_3">
          <link rel="stylesheet" href="style3.css">
-         <p> <img class = "hintergrund" src="Bild_Seite3.jpg"
+         <p> <img class = "hintergrund" src="https://www.noz.de/article/teaser/1881701/full"
          alt="hintergrundbild"/>
          </p>
          <h1>Neues Reiseziel hinzufügen</h1>
@@ -87,7 +93,7 @@
   <section id="part_4">
 
          <link rel="stylesheet" href="style4.css">
-         <p> <img class = "hintergrund" src="Bild_Seite4.jpg"
+         <p> <img class = "hintergrund" src="https://cdn1.spiegel.de/images/image-1243725-860_poster_16x9-gtur-1243725.jpg"
          alt="hintergrundbild"/>
          </p>
            <h1>Finden Sie ihr passendes Reiseziel</h1>
@@ -99,13 +105,13 @@
                <li> <h3>Meerzugang</h3> </li>
                <li>
                  <label>
-                   <input type="checkbox" name="Meerzugang" value="ja">
+                   <input type="checkbox" id="meerja" value="ja">
                    Ja
                  </label>
                </li>
                <li>
                  <label>
-                   <input type="checkbox" name="Meerzugang" value="nein">
+                   <input type="checkbox" id="meernein" value="nein">
                    Nein
                  </label>
                </li>
@@ -116,19 +122,19 @@
                <li> <h3> Temperatur </h3> </li>
                <li>
                  <label>
-                   <input type="checkbox" name="Temperatur" value="warm">
+                   <input type="checkbox" id="warm" value="warm">
                    warm
                  </label>
                </li>
                <li>
                  <label>
-                   <input type="checkbox" name="Temperatur" value="mäßig">
+                   <input type="checkbox" id="mäßig" value="mäßig">
                    mäßig
                  </label>
                </li>
                <li>
                  <label>
-                   <input type="checkbox" name="Temperatur" value="kalt">
+                   <input type="checkbox" id="kalt" value="kalt">
                    kalt
                  </label>
                </li>
@@ -203,13 +209,13 @@
                <li> <h3>Insel</h3> </li>
                <li>
                  <label>
-                   <input type="checkbox" name="Insel" value="ja">
+                   <input type="checkbox" id="Inselja" value="ja">
                    Ja
                  </label>
                </li>
                <li>
                  <label>
-                   <input type="checkbox" name="Insel" value="nein">
+                   <input type="checkbox" id="Inselnein" value="nein">
                    Nein
                  </label>
                </li>
@@ -239,17 +245,17 @@
              </ul>
            </form>
            <div>
-             <input type = "button" value = "Senden"/>
+             <input type = "button" value = "Senden" onclick="searchCountry()"/>
            </div>
            <br>
             <h4> Hier werden die gefundenen Reiseziele ausgegeben: </h4>
            <br>
-           <output name="reiseziele"></output>
+           <output id="searchoutput"></output>
          </section>
 
   <section id="part_5">
     <link rel="stylesheet" href="style5.css">
-    <p> <img class = "hintergrund" src="Bild_Seite2.jpg"
+    <p> <img class = "hintergrund" src="https://mediafiles.urlaubsguru.de/wp-content/uploads/2016/05/horseshoe-falls-canada-istock_000070041445_large-2.jpg"
     alt="hintergrundbild"/>
     </p>
 
@@ -257,7 +263,11 @@
 
 
 	</p>
+    </section>
 
+
+
+    </section>
 	<script src="app.js"></script>
    </body>
 </html>
