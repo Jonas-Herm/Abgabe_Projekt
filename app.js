@@ -175,6 +175,7 @@ function filterCountry(data){
 			for (var i = 0; i<searchInsel.length; i++){
 				if (found[j].Feld5 == searchInsel[i]){
 					found2.push(found[j])
+
 				};
 			};
 		};
@@ -190,7 +191,7 @@ function filterCountry(data){
 			for (var i = 0; i<searchMeer.length; i++){
 				if (found[j].Feld1 == searchMeer[i]){
 					found3.push(found2[j])
-					console.log(found2[j].Name);
+
 				};
 			};
 		};
@@ -199,11 +200,43 @@ function filterCountry(data){
 		found3 = found2;
 	};
 
+  //Kontinent Suche
+	if (searchKontinent.length != 0){
+		var found4 = [];
+		for (var j = 0; j<found3.length; j++){
+			for (var i = 0; i<searchKontinent.length; i++){
+				if (found[j].Feld4 == searchKontinent[i]){
+					found4.push(found3[j])
+
+				};
+			};
+		};
+	} else
+	{
+		found4 = found3;
+	};
+
+  //Gefahrenzustand Suche
+	if (searchGefahrenzustand.length != 0){
+		var found5 = [];
+		for (var j = 0; j<found4.length; j++){
+			for (var i = 0; i<searchGefahrenzustand.length; i++){
+				if (found[j].Feld6 == searchGefahrenzustand[i]){
+					found5.push(found4[j])
+					console.log(found4[j].Name);
+				};
+			};
+		};
+	} else
+	{
+		found5 = found4;
+	};
+
 	document.getElementById("searchoutput").innerHTML = "";
-	numberOfListItems = found3.length;
+	numberOfListItems = found5.length;
 	for (var i = 0;i<numberOfListItems;i++){
 
-		var para6 = document.createTextNode(found3[i].Name);
+		var para6 = document.createTextNode(found5[i].Name);
 		document.getElementById("searchoutput").appendChild(para6);
 
 		var para8 = document.createElement("BR");
@@ -242,7 +275,16 @@ function loadCountryInformation(name){
 	var para9 = document.createTextNode("Temperatur: ");
 	document.getElementById("update").appendChild(para9);
 
-	var para10 = document.createElement("INPUT");
+  var para10 = document.createElement("SELECT");
+  var c = document.createElement("option");
+  c.text = "warm";
+  para10.options.add(c);
+  var d = document.createElement("option");
+  d.text = "mäßig";
+  para10.options.add(d);
+  var e = document.createElement("option");
+  e.text = "kalt";
+  para10.options.add(e);
 	para10.id = "feld2";
 	para10.value = doc.data().Feld2;
 	document.getElementById("update").appendChild(para10);
@@ -266,10 +308,28 @@ function loadCountryInformation(name){
   var para15 = document.createTextNode("Kontinent: ");
 	document.getElementById("update").appendChild(para15);
 
-	var para15 = document.createElement("INPUT");
-	para15.id = "feld4";
-	para15.value = doc.data().Feld4;
-	document.getElementById("update").appendChild(para15);
+  var para16 = document.createElement("SELECT");
+  var c = document.createElement("option");
+  c.text = "Europa";
+  para16.options.add(c);
+  var d = document.createElement("option");
+  d.text = "Asien";
+  para16.options.add(d);
+  var e = document.createElement("option");
+  e.text = "Nordamerika";
+  para16.options.add(e);
+  var f = document.createElement("option");
+  f.text = "Südamerika";
+  para16.options.add(f);
+  var g = document.createElement("option");
+  g.text = "Afrika";
+  para16.options.add(g);
+  var h = document.createElement("option");
+  h.text = "Australien & Ozeanien";
+  para16.options.add(h);
+	para16.id = "feld4";
+	para16.value = doc.data().Feld4;
+	document.getElementById("update").appendChild(para16);
 
 	var para17 = document.createElement("BR");
 	document.getElementById("update").appendChild(para17);
@@ -296,7 +356,16 @@ function loadCountryInformation(name){
   var para21 = document.createTextNode("Gefahrenstufe: ");
 	document.getElementById("update").appendChild(para21);
 
-	var para22 = document.createElement("INPUT");
+  var para22 = document.createElement("SELECT");
+  var c = document.createElement("option");
+  c.text = "unkritisch";
+  para22.options.add(c);
+  var d = document.createElement("option");
+  d.text = "teilweise kritisch";
+  para22.options.add(d);
+  var e = document.createElement("option");
+  e.text = "kritisch";
+  para22.options.add(e);
 	para22.id = "feld6";
 	para22.value = doc.data().Feld6;
 	document.getElementById("update").appendChild(para22);
