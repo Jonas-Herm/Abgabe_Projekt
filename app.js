@@ -19,6 +19,7 @@ function writeCountry(){
 .then(doc => {
   if(doc.exists){
      console.log(countryToSave + " already exists");
+     window.alert("Dieses Land gibt es schon!");
   }
   else{
 	  console.log(countryToSave + " will be saved");
@@ -31,7 +32,7 @@ function writeCountry(){
    Feld5: "",
    Feld6: ""
 	 }).then(function() {
-	 window.alert("Successfully added");
+	 window.alert("Land erfolgreich hinzugefügt!");
  }).catch(function (error) {
 console.log(error);
  });
@@ -106,6 +107,7 @@ firestore.collection("Test123")
 
 function filterCountry(data){
 
+  //Eigenschaften der Länder anlegen, um sie zu vergleichen
 	const Inselja = document.querySelector("#Inselja");
 	const Inselnein = document.querySelector("#Inselnein");
 	searchInsel = [];
@@ -128,6 +130,30 @@ function filterCountry(data){
 
 	if (meerja.checked == true){searchMeer.push("Ja")};
 	if (meernein.checked == true){searchMeer.push("Nein")};
+
+  const kontinenteuropa = document.querySelector("#europa");
+	const kontinentasien = document.querySelector("#asien");
+	const kontinentnord = document.querySelector("#nordamerika");
+  const kontinentsüd = document.querySelector("#südamerika");
+	const kontinentafrika = document.querySelector("#afrika");
+	const kontinentaustralien = document.querySelector("#australien");
+	searchKontinent = [];
+
+  if (kontinenteuropa.checked == true){searchKontinent.push("Europa")};
+	if (kontinentasien.checked == true){searchKontinent.push("Asien")};
+	if (kontinentnord.checked == true){searchKontinent.push("Nordamerika")};
+  if (kontinentsüd.checked == true){searchKontinent.push("Südamerika")};
+	if (kontinentafrika.checked == true){searchKontinent.push("Afrika")};
+	if (kontinentaustralien.checked == true){searchKontinent.push("Australien & Ozeanien")};
+
+  const unkritisch = document.querySelector("#unkritisch");
+	const teilweise = document.querySelector("#teilweise");
+	const kritisch = document.querySelector("#kritisch");
+	searchGefahrenzustand = [];
+
+  if (unkritisch.checked == true){searchGefahrenzustand.push("unkritisch")};
+	if (teilweise.checked == true){searchGefahrenzustand.push("teilweise")};
+	if (kritisch.checked == true){searchGefahrenzustand.push("kritisch")};
 
 	//Temperatur Suche
 	var found = [];
