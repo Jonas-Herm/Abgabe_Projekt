@@ -63,7 +63,7 @@ function updateCountry(name, feld1, feld2, feld3, feld4, feld5, feld6){
     Feld6: feld6
 })
 .then(function() {
-    window.alert("Document successfully updated!");
+    window.alert("Dokument erfolgreich aktualisiert!");
 })
 .catch(function(error) {
     // The document probably doesn't exist.
@@ -130,6 +130,13 @@ function filterCountry(data){
 
 	if (meerja.checked == true){searchMeer.push("Ja")};
 	if (meernein.checked == true){searchMeer.push("Nein")};
+
+  const mioStadtJa = document.querySelector("#mioStadtJa");
+	const mioStadtNein = document.querySelector("#mioStadtNein");
+	searchMioStadt = [];
+
+	if (mioStadtJa.checked == true){searchMioStadt.push("Ja")};
+	if (mioStadtNein.checked == true){searchMioStadt.push("Nein")};
 
   const kontinenteuropa = document.querySelector("#europa");
 	const kontinentasien = document.querySelector("#asien");
@@ -232,11 +239,27 @@ function filterCountry(data){
 		found5 = found4;
 	};
 
+  //Millionenstadt Suche
+  if (searchMioStadt.length != 0){
+		var found6 = [];
+		for (var j = 0; j<found5.length; j++){
+			for (var i = 0; i<searchMioStadt.length; i++){
+				if (found[j].Feld3 == searchMioStadt[i]){
+					found6.push(found5[j])
+					console.log(found5[j].Name);
+				};
+			};
+		};
+	} else
+	{
+		found6 = found5;
+	};
+
 	document.getElementById("searchoutput").innerHTML = "";
-	numberOfListItems = found5.length;
+	numberOfListItems = found6.length;
 	for (var i = 0;i<numberOfListItems;i++){
 
-		var para6 = document.createTextNode(found5[i].Name);
+		var para6 = document.createTextNode(found6[i].Name);
 		document.getElementById("searchoutput").appendChild(para6);
 
 		var para8 = document.createElement("BR");
@@ -293,10 +316,16 @@ function loadCountryInformation(name){
 	document.getElementById("update").appendChild(para11);
 
   //3.Feld
-  var para12 = document.createTextNode("Art des Urlaubs: ");
+  var para12 = document.createTextNode("Millionenstadt: ");
 	document.getElementById("update").appendChild(para12);
 
-	var para13 = document.createElement("INPUT");
+	var para13 = document.createElement("SELECT");
+  var c = document.createElement("option");
+  c.text = "Ja";
+  para13.options.add(c);
+  var d = document.createElement("option");
+  d.text = "Nein";
+  para13.options.add(d);
 	para13.id = "feld3";
 	para13.value = doc.data().Feld3;
 	document.getElementById("update").appendChild(para13);
