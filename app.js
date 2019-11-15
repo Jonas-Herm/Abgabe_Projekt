@@ -182,7 +182,7 @@ function filterCountry(data){
 			for (var i = 0; i<searchInsel.length; i++){
 				if (found[j].Feld5 == searchInsel[i]){
 					found2.push(found[j])
-
+          console.log(found[j].Name);
 				};
 			};
 		};
@@ -198,7 +198,7 @@ function filterCountry(data){
 			for (var i = 0; i<searchMeer.length; i++){
 				if (found[j].Feld1 == searchMeer[i]){
 					found3.push(found2[j])
-
+          console.log(found2[j].Name);
 				};
 			};
 		};
@@ -214,6 +214,7 @@ function filterCountry(data){
 			for (var i = 0; i<searchKontinent.length; i++){
 				if (found[j].Feld4 == searchKontinent[i]){
 					found4.push(found3[j])
+          console.log(found3[j].Name);
 
 				};
 			};
@@ -223,12 +224,12 @@ function filterCountry(data){
 		found4 = found3;
 	};
 
-  //Gefahrenzustand Suche
-	if (searchGefahrenzustand.length != 0){
+  //Millionenstadt Suche
+  if (searchMioStadt.length != 0){
 		var found5 = [];
 		for (var j = 0; j<found4.length; j++){
-			for (var i = 0; i<searchGefahrenzustand.length; i++){
-				if (found[j].Feld6 == searchGefahrenzustand[i]){
+			for (var i = 0; i<searchMioStadt.length; i++){
+				if (found[j].Feld3 == searchMioStadt[i]){
 					found5.push(found4[j])
 					console.log(found4[j].Name);
 				};
@@ -239,14 +240,14 @@ function filterCountry(data){
 		found5 = found4;
 	};
 
-  //Millionenstadt Suche
-  if (searchMioStadt.length != 0){
+  //Gefahrenzustand Suche
+	if (searchGefahrenzustand.length != 0){
 		var found6 = [];
 		for (var j = 0; j<found5.length; j++){
-			for (var i = 0; i<searchMioStadt.length; i++){
-				if (found[j].Feld3 == searchMioStadt[i]){
+			for (var i = 0; i<searchGefahrenzustand.length; i++){
+				if (found[j].Feld6 == searchGefahrenzustand[i]){
 					found6.push(found5[j])
-					console.log(found5[j].Name);
+          console.log(found5[j].Name);
 				};
 			};
 		};
@@ -254,6 +255,8 @@ function filterCountry(data){
 	{
 		found6 = found5;
 	};
+
+
 
 	document.getElementById("searchoutput").innerHTML = "";
 	numberOfListItems = found6.length;
