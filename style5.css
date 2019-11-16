@@ -27,6 +27,7 @@ li a {
   text-shadow: 2px 2px grey;
 
 }
+a:hover {color: lightgray;}
 
 
 #part_5  img.hintergrund {

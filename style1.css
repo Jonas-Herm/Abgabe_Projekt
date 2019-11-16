@@ -30,6 +30,8 @@ li a {
 
 }
 
+a:hover {color: lightgray;}
+
 
 #part_1  img.hintergrund {
   display: block; z-index:-20;

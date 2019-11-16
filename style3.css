@@ -27,7 +27,7 @@ li a {
   text-shadow: 2px 2px grey;
 
 }
-
+a:hover {color: lightgray;}
 
 /* Teil 3 */
 #part_3{
