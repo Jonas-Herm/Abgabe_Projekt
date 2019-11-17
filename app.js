@@ -1,5 +1,5 @@
 
-docRef = "Test123";
+docRef = "Reiseziele";
   const inputTextField = document.querySelector("#countryname");
   const addButton = document.querySelector("#addButton");
   addButton.addEventListener("click", writeCountry);
@@ -93,7 +93,7 @@ function showSpecificCountry(name){
 }
 
 function searchCountry(){
-firestore.collection("Test123")
+firestore.collection("Reiseziele")
  .get()
     .then(function(querySnapshot) {
         var data = querySnapshot.docs.map(function (documentSnapshot) {
@@ -108,7 +108,7 @@ firestore.collection("Test123")
 
 function searchSpecificCountry() {
 	const searchSpecificCountryName = document.querySelector("#searchSpecificCountry");
-	firestore.collection("Test123").where("Name", "==", searchSpecificCountryName.value)
+	firestore.collection("Reiseziele").where("Name", "==", searchSpecificCountryName.value)
 		.get()
 		.then(function (querySnapshot) {
 			var data = querySnapshot.docs.map(function (documentSnapshot) {

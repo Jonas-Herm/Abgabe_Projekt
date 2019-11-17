@@ -13,7 +13,7 @@
   var firestore = firebase.firestore();
 
 function makeList() {
-	 firestore.collection("Test123")
+	 firestore.collection("Reiseziele")
     .get()
     .then(function(querySnapshot) {
         var data = querySnapshot.docs.map(function (documentSnapshot) {
