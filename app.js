@@ -105,6 +105,27 @@ firestore.collection("Test123")
     });
 }
 
+function searchSpecificCountry() {
+	const searchSpecificCountryName = document.querySelector("#searchSpecificCountry");
+	firestore.collection("Test123").where("Name", "==", searchSpecificCountryName.value)
+		.get()
+		.then(function (querySnapshot) {
+			var data = querySnapshot.docs.map(function (documentSnapshot) {
+				return documentSnapshot.data();
+			});
+			if (data.length == 1) {
+				showSpecificCountry(data[0].Name);
+			}
+			else {
+				console.log("No Country found");
+				//TODO z.B Fehlermeldung in HTML anzeigen
+			}
+		})
+		.catch(function (error) {
+			console.log("Error getting documents: ", error);
+		});
+}
+
 function filterCountry(data){
 
   //Eigenschaften der Länder anlegen, um sie zu vergleichen
@@ -182,7 +203,6 @@ function filterCountry(data){
 			for (var i = 0; i<searchInsel.length; i++){
 				if (found[j].Feld5 == searchInsel[i]){
 					found2.push(found[j])
-          console.log(found[j].Name);
 				};
 			};
 		};
@@ -196,9 +216,8 @@ function filterCountry(data){
 		var found3 = [];
 		for (var j = 0; j<found2.length; j++){
 			for (var i = 0; i<searchMeer.length; i++){
-				if (found[j].Feld1 == searchMeer[i]){
+				if (found2[j].Feld1 == searchMeer[i]){
 					found3.push(found2[j])
-          console.log(found2[j].Name);
 				};
 			};
 		};
@@ -212,10 +231,8 @@ function filterCountry(data){
 		var found4 = [];
 		for (var j = 0; j<found3.length; j++){
 			for (var i = 0; i<searchKontinent.length; i++){
-				if (found[j].Feld4 == searchKontinent[i]){
+				if (found3[j].Feld4 == searchKontinent[i]){
 					found4.push(found3[j])
-          console.log(found3[j].Name);
-
 				};
 			};
 		};
@@ -229,9 +246,8 @@ function filterCountry(data){
 		var found5 = [];
 		for (var j = 0; j<found4.length; j++){
 			for (var i = 0; i<searchMioStadt.length; i++){
-				if (found[j].Feld3 == searchMioStadt[i]){
+				if (found4[j].Feld3 == searchMioStadt[i]){
 					found5.push(found4[j])
-					console.log(found4[j].Name);
 				};
 			};
 		};
@@ -245,9 +261,8 @@ function filterCountry(data){
 		var found6 = [];
 		for (var j = 0; j<found5.length; j++){
 			for (var i = 0; i<searchGefahrenzustand.length; i++){
-				if (found[j].Feld6 == searchGefahrenzustand[i]){
+				if (found5[j].Feld6 == searchGefahrenzustand[i]){
 					found6.push(found5[j])
-          console.log(found5[j].Name);
 				};
 			};
 		};
@@ -260,6 +275,9 @@ function filterCountry(data){
 
 	document.getElementById("searchoutput").innerHTML = "";
 	numberOfListItems = found6.length;
+
+
+
 	for (var i = 0;i<numberOfListItems;i++){
 
 		var para6 = document.createTextNode(found6[i].Name);
