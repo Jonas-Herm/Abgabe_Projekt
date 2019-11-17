@@ -1,12 +1,12 @@
 // Your web app's Firebase configuration
   var config = {
-    apiKey: "AIzaSyAKWBAxz9zVg7GyHM0dHb8FcBz4pvemYOA",
-    authDomain: "test-7ac0f.firebaseapp.com",
-    databaseURL: "https://test-7ac0f.firebaseio.com",
-    projectId: "test-7ac0f",
-    storageBucket: "test-7ac0f.appspot.com",
-    messagingSenderId: "1002329368687",
-    appId: "1:1002329368687:web:5449f38b34b2c916c6c59a"
+    apiKey: "AIzaSyABv-nEhVl6ckZiBiFeOrSf8e3eJavDeeQ",
+    authDomain: "reisezeile.firebaseapp.com",
+    databaseURL: "https://reisezeile.firebaseio.com",
+    projectId: "reisezeile",
+    storageBucket: "reisezeile.appspot.com",
+    messagingSenderId: "677319391792",
+    appId: "1:677319391792:web:0836849ffe48aaeba74bf5"
   };
   // Initialize Firebase
   firebase.initializeApp(config);
