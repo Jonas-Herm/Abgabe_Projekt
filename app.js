@@ -119,6 +119,7 @@ function searchSpecificCountry() {
 			else {
 				console.log("No Country found");
 				//TODO z.B Fehlermeldung in HTML anzeigen
+        window.alert("Land wurde nicht gefunden!");
 			}
 		})
 		.catch(function (error) {
