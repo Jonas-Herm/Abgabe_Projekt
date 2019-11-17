@@ -68,6 +68,7 @@ function updateCountry(name, feld1, feld2, feld3, feld4, feld5, feld6){
 .catch(function(error) {
     // The document probably doesn't exist.
     console.error("Error updating document: ", error);
+
 });
 }
 
@@ -120,6 +121,7 @@ function searchSpecificCountry() {
 				console.log("No Country found");
 				//TODO z.B Fehlermeldung in HTML anzeigen
         window.alert("Land wurde nicht gefunden!");
+        document.location.hash = "#part_3";
 			}
 		})
 		.catch(function (error) {
