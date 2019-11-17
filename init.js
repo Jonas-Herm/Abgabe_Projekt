@@ -29,12 +29,12 @@ function makeList() {
 function writeList(data){
 
     numberOfListItems = data.length;
-    document.getElementById("test").innerHTML = "";
+    document.getElementById("liste_reiseziele").innerHTML = "";
 
        for (i = 0; i < numberOfListItems; ++i) {
 		var para = document.createElement("H3");
 		para.innerText = data[i].Name;
-		document.getElementById("test").appendChild(para);
+		document.getElementById("liste_reiseziele").appendChild(para);
 
 		var para2 = document.createElement("BUTTON");
 		para2.innerText = "Bearbeiten";
@@ -42,7 +42,7 @@ function writeList(data){
 		para2.onclick = function(){
 			showSpecificCountry(this.id);
 		};
-		document.getElementById("test").appendChild(para2);
+		document.getElementById("liste_reiseziele").appendChild(para2);
 
 		var para3 = document.createElement("BUTTON");
 		para3.id = data[i].Name;
@@ -50,13 +50,13 @@ function writeList(data){
 			warnung(this.id);
 		};
 		para3.innerText = "Löschen";
-		document.getElementById("test").appendChild(para3);
+		document.getElementById("liste_reiseziele").appendChild(para3);
 
 		para4 = document.createElement("BR");
-		document.getElementById("test").appendChild(para4);
+		document.getElementById("liste_reiseziele").appendChild(para4);
 
 		para5 = document.createElement("HR");
-		document.getElementById("test").appendChild(para5);
+		document.getElementById("liste_reiseziele").appendChild(para5);
 
 
 

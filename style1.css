@@ -27,7 +27,6 @@ li a {
   padding: 15px 120px;
   text-decoration: none;
   text-shadow: 2px 2px grey;
-
 }
 
 a:hover {color: lightgray;}
@@ -42,7 +41,7 @@ a:hover {color: lightgray;}
   position: fixed;
   top: 0;
   left: 0;
-     }
+}
 
 #part_1 h1{
 
@@ -57,14 +56,13 @@ a:hover {color: lightgray;}
   margin-top: 1em;
 }
 
-/* Anpassung für kleiner Bildschirmgrößen (als Orientierung: Galaxy S9) */
+/* Anpassung für kleinere Bildschirmgrößen (als Orientierung: Galaxy S9) */
 @media (max-width: 500px) {
   li a {
     color: white;
     padding: 10px 50px;
     text-decoration: none;
     text-shadow: 2px 2px grey;
-
   }
 
   nav {
@@ -78,6 +76,6 @@ a:hover {color: lightgray;}
 
   #part_1  img.hintergrund {
     min-width: 824px;
-       }
+  }
 
 }

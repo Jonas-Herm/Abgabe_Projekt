@@ -1,6 +1,5 @@
 body{
   background:  snow;
-
 }
 
 nav {
@@ -26,13 +25,12 @@ li a {
   padding: 15px 120px;
   text-decoration: none;
   text-shadow: 2px 2px grey;
-
 }
+
 a:hover {color: lightgray;}
 
 
 /* 4.Teil */
-
 #part_4{
   background: rgba(211,211,211,0.8);
   border-radius: 5px;
@@ -69,8 +67,7 @@ a:hover {color: lightgray;}
   position: fixed;
   top: 0;
   left: 0;
-     }
-
+}
 
 #part_4 form{
   display: inline-grid;
@@ -115,18 +112,18 @@ border-radius: 8px;
   padding: 5px 0;
   border-radius: 6px;
 
-  /* Position the tooltip text - see examples below! */
+  /* Position the tooltip text */
   position: absolute;
   z-index: 1;
 }
 
-/* Show the tooltip text when you mouse over the tooltip container */
+/* Tooltip wird angezeigt, wenn mit der Maus über den Container fährt */
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
 
 
-/* Anpassung für kleiner Bildschirmgrößen (als Orientierung: Galaxy S9) */
+/* Anpassung für kleinere Bildschirmgrößen (als Orientierung: Galaxy S9) */
 @media (max-width: 500px) {
   li a {
     color: white;

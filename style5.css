@@ -27,6 +27,7 @@ li a {
   text-shadow: 2px 2px grey;
 
 }
+
 a:hover {color: lightgray;}
 
 
@@ -54,7 +55,7 @@ a:hover {color: lightgray;}
 }
 
 
-/* Anpassung für kleiner Bildschirmgrößen (als Orientierung: Galaxy S9) */
+/* Anpassung für kleinere Bildschirmgrößen (als Orientierung: Galaxy S9) */
 @media (max-width: 500px) {
   li a {
     color: white;

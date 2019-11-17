@@ -1,4 +1,3 @@
-
 docRef = "Reiseziele";
   const inputTextField = document.querySelector("#countryname");
   const addButton = document.querySelector("#addButton");
@@ -63,7 +62,7 @@ function updateCountry(name, feld1, feld2, feld3, feld4, feld5, feld6){
     Feld6: feld6
 })
 .then(function() {
-    window.alert("Dokument erfolgreich aktualisiert!");
+    window.alert("Änderungen erfolgreich gespeichert!");
 })
 .catch(function(error) {
     // The document probably doesn't exist.
@@ -119,7 +118,6 @@ function searchSpecificCountry() {
 			}
 			else {
 				console.log("No Country found");
-				//TODO z.B Fehlermeldung in HTML anzeigen
         window.alert("Land wurde nicht gefunden!");
         document.location.hash = "#part_3";
 			}
@@ -185,6 +183,8 @@ function filterCountry(data){
   if (unkritisch.checked == true){searchGefahrenzustand.push("unkritisch")};
 	if (teilweise.checked == true){searchGefahrenzustand.push("teilweise kritisch")};
 	if (kritisch.checked == true){searchGefahrenzustand.push("kritisch")};
+
+  //Suchvorgang
 
 	//Temperatur Suche
 	var found = [];
@@ -283,14 +283,24 @@ function filterCountry(data){
 
 	for (var i = 0;i<numberOfListItems;i++){
 
-		var para6 = document.createTextNode(found6[i].Name);
-		document.getElementById("searchoutput").appendChild(para6);
+		var para1 = document.createTextNode(found6[i].Name);
+		document.getElementById("searchoutput").appendChild(para1);
 
-		var para8 = document.createElement("BR");
-		document.getElementById("searchoutput").appendChild(para8);
+		var para2 = document.createElement("BR");
+		document.getElementById("searchoutput").appendChild(para2);
 	};
-	window.scrollTo(0,document.body.scrollHeight);
+  if (numberOfListItems == 0){
+    var para3 = document.createTextNode("Es wurde kein entsprechendes Reiseziel gefunden:");
+    document.getElementById("searchoutput").appendChild(para3);
 
+    var para4 = document.createElement("BR");
+		document.getElementById("searchoutput").appendChild(para4);
+
+    var para5 = document.createTextNode("Ändern Sie die Filtermöglichkeiten oder legen Sie selbst ein Land an!");
+    document.getElementById("searchoutput").appendChild(para5);
+
+    }
+	window.scrollTo(0,document.body.scrollHeight);
 	}
 
 
@@ -304,12 +314,12 @@ function loadCountryInformation(name){
 	document.getElementById("update").appendChild(para6);
 
 	var para7 = document.createElement("SELECT");
-  var c = document.createElement("option");
-  c.text = "Ja";
-  para7.options.add(c);
-  var d = document.createElement("option");
-  d.text = "Nein";
-  para7.options.add(d);
+  var opt1 = document.createElement("option");
+  opt1.text = "Ja";
+  para7.options.add(opt1);
+  var opt2 = document.createElement("option");
+  opt2.text = "Nein";
+  para7.options.add(opt2);
 	para7.id = "feld1";
 	para7.value = doc.data().Feld1;
 	document.getElementById("update").appendChild(para7);
@@ -323,15 +333,15 @@ function loadCountryInformation(name){
 	document.getElementById("update").appendChild(para9);
 
   var para10 = document.createElement("SELECT");
-  var c = document.createElement("option");
-  c.text = "warm";
-  para10.options.add(c);
-  var d = document.createElement("option");
-  d.text = "mäßig";
-  para10.options.add(d);
-  var e = document.createElement("option");
-  e.text = "kalt";
-  para10.options.add(e);
+  var opt1 = document.createElement("option");
+  opt1.text = "warm";
+  para10.options.add(opt1);
+  var opt2 = document.createElement("option");
+  opt2.text = "mäßig";
+  para10.options.add(opt2);
+  var opt3 = document.createElement("option");
+  opt3.text = "kalt";
+  para10.options.add(opt3);
 	para10.id = "feld2";
 	para10.value = doc.data().Feld2;
 	document.getElementById("update").appendChild(para10);
@@ -344,12 +354,12 @@ function loadCountryInformation(name){
 	document.getElementById("update").appendChild(para12);
 
 	var para13 = document.createElement("SELECT");
-  var c = document.createElement("option");
-  c.text = "Ja";
-  para13.options.add(c);
-  var d = document.createElement("option");
-  d.text = "Nein";
-  para13.options.add(d);
+  var opt1 = document.createElement("option");
+  opt1.text = "Ja";
+  para13.options.add(opt1);
+  var opt2 = document.createElement("option");
+  opt2.text = "Nein";
+  para13.options.add(opt2);
 	para13.id = "feld3";
 	para13.value = doc.data().Feld3;
 	document.getElementById("update").appendChild(para13);
@@ -362,24 +372,24 @@ function loadCountryInformation(name){
 	document.getElementById("update").appendChild(para15);
 
   var para16 = document.createElement("SELECT");
-  var c = document.createElement("option");
-  c.text = "Europa";
-  para16.options.add(c);
-  var d = document.createElement("option");
-  d.text = "Asien";
-  para16.options.add(d);
-  var e = document.createElement("option");
-  e.text = "Nordamerika";
-  para16.options.add(e);
-  var f = document.createElement("option");
-  f.text = "Südamerika";
-  para16.options.add(f);
-  var g = document.createElement("option");
-  g.text = "Afrika";
-  para16.options.add(g);
-  var h = document.createElement("option");
-  h.text = "Australien & Ozeanien";
-  para16.options.add(h);
+  var opt1 = document.createElement("option");
+  opt1.text = "Europa";
+  para16.options.add(opt1);
+  var opt2 = document.createElement("option");
+  opt2.text = "Asien";
+  para16.options.add(opt2);
+  var opt3 = document.createElement("option");
+  opt3.text = "Nordamerika";
+  para16.options.add(opt3);
+  var opt4 = document.createElement("option");
+  opt4.text = "Südamerika";
+  para16.options.add(opt4);
+  var opt5 = document.createElement("option");
+  opt5.text = "Afrika";
+  para16.options.add(opt5);
+  var opt6 = document.createElement("option");
+  opt6.text = "Australien & Ozeanien";
+  para16.options.add(opt6);
 	para16.id = "feld4";
 	para16.value = doc.data().Feld4;
 	document.getElementById("update").appendChild(para16);
@@ -392,12 +402,12 @@ function loadCountryInformation(name){
 	document.getElementById("update").appendChild(para18);
 
 	var para19 = document.createElement("SELECT");
-	var c = document.createElement("option");
-	c.text = "Ja";
-	para19.options.add(c);
-	var d = document.createElement("option");
-	d.text = "Nein";
-	para19.options.add(d);
+	var opt1 = document.createElement("option");
+	opt1.text = "Ja";
+	para19.options.add(opt1);
+	var opt2 = document.createElement("option");
+	opt2.text = "Nein";
+	para19.options.add(opt2);
 	para19.value = doc.data().Feld5;
 	para19.id = "feld5";
 	document.getElementById("update").appendChild(para19);
@@ -410,15 +420,15 @@ function loadCountryInformation(name){
 	document.getElementById("update").appendChild(para21);
 
   var para22 = document.createElement("SELECT");
-  var c = document.createElement("option");
-  c.text = "unkritisch";
-  para22.options.add(c);
-  var d = document.createElement("option");
-  d.text = "teilweise kritisch";
-  para22.options.add(d);
-  var e = document.createElement("option");
-  e.text = "kritisch";
-  para22.options.add(e);
+  var opt1 = document.createElement("option");
+  opt1.text = "unkritisch";
+  para22.options.add(opt1);
+  var opt2 = document.createElement("option");
+  opt2.text = "teilweise kritisch";
+  para22.options.add(opt2);
+  var opt3 = document.createElement("option");
+  opt3.text = "kritisch";
+  para22.options.add(opt3);
 	para22.id = "feld6";
 	para22.value = doc.data().Feld6;
 	document.getElementById("update").appendChild(para22);
@@ -430,7 +440,7 @@ function loadCountryInformation(name){
 
 
 	var para24 = document.createElement("BUTTON");
-	para24.innerText= "Update";
+	para24.innerText= "Speichern";
 	para24.id = name;
 	para24.onclick = function(){
 		const feld1 = document.querySelector("#feld1");

@@ -33,53 +33,44 @@
 
   <section id="part_1">
     <link rel="stylesheet" href="style1.css">
-    <p> <img class = "hintergrund" src="https://www.radiogong.de/website/var/tmp/image-thumbnails/140000/147351/thumb__gallery-image/iceman.png"
+    <p> <img class = "hintergrund" src="Bild_Startseite.jpg"
     alt="hintergrundbild"/>
     </p>
       <h1>GLOHSREICHE REISEN 🌞</h1>
-    <div> <label for="suche">Reiseziel eingeben</label>
-  <input type="search" id="searchSpecificCountry" placeholder="Suche">
-      <button onclick="searchSpecificCountry()" id="searchSpecificButton"> Suche! </button>
-  </div>
+    <div> <label for="suche">Reiseziel eingeben: </label>
+      <input type="search" id="searchSpecificCountry" placeholder="Suche">
+      <button onclick="searchSpecificCountry()" id="searchSpecificButton"> Suche </button>
+    </div>
   </section>
 
   <section id="part_2">
     <link rel="stylesheet" href="style2.css">
-    <p> <img class = "hintergrund" src="https://mediafiles.urlaubsguru.de/wp-content/uploads/2016/05/horseshoe-falls-canada-istock_000070041445_large-2.jpg"
+    <p> <img class = "hintergrund" src="Bild_Seite2.jpg"
     alt="hintergrundbild"/>
     </p>
-
         <header>
-
           <h1> Hier können Sie sich Reiseziele anschauen, bearbeiten und löschen! </h1>
-
-
         </header>
-
-
         <main>
-
           <h2>  Bereits angelegte Urlaubsorte  </h2>
-		  <p id = "test">
-		  <script>makeList()</script>
-		  </p>
+		        <p id = "liste_reiseziele">
+		        <script>makeList()</script>
+		        </p>
         </main>
-       </section>
+  </section>
 
   <section id="part_3">
          <link rel="stylesheet" href="style3.css">
-         <p> <img class = "hintergrund" src="https://www.noz.de/article/teaser/1881701/full"
-         alt="hintergrundbild"/>
-         </p>
+         <p> <img class = "hintergrund" src="Bild_Seite3.jpg" alt="hintergrundbild"/> </p>
          <h1>Neues Reiseziel hinzufügen</h1>
-         <h2> </h2>
+         <h2> </h2> <!-- für die gestrichelten Linien -->
          <br>
          <br>
          <br>
          <br>
          <div>
            <input type = "textfield" placeholder="Hier ein Land eingeben z. B. Deutschland" id="countryname"/>
-		   <button id="addButton"> Hinzufügen</button>
+		       <button id="addButton"> Hinzufügen</button>
          </div>
        <br>
        <br>
@@ -91,17 +82,12 @@
        <br>
        </section>
 
-  <section id="part_4">
-
+       <section id="part_4">
          <link rel="stylesheet" href="style4.css">
-         <p> <img class = "hintergrund" src="https://cdn1.spiegel.de/images/image-1243725-860_poster_16x9-gtur-1243725.jpg"
-         alt="hintergrundbild"/>
-         </p>
+         <p> <img class = "hintergrund" src="Bild_Seite4.jpg" alt="hintergrundbild"/> </p>
            <h1>Finden Sie ihr passendes Reiseziel</h1>
-
            <h2> Benutzen Sie darunterliegende Filtermöglichkeiten, um ihr bevorzugtes Reiseziel zu finden: </h2>
             <form>
-
              <ul>
                <li class="tooltip"> <h3>Meerzugang</h3> <span class="tooltiptext"> Soll das Land an das Meer grenzen? </span>  </li>
                <li>
@@ -250,19 +236,10 @@
 
   <section id="part_5">
     <link rel="stylesheet" href="style5.css">
-    <p> <img class = "hintergrund" src="https://mediafiles.urlaubsguru.de/wp-content/uploads/2016/05/horseshoe-falls-canada-istock_000070041445_large-2.jpg"
-    alt="hintergrundbild"/>
-    </p>
+    <p> <img class = "hintergrund" src="Bild_Seite2.jpg" alt="hintergrundbild"/> </p>
+    <p id="update"> </p>
+  </section>
 
-	<p id="update">
-
-
-	</p>
-    </section>
-
-
-
-    </section>
-	<script src="app.js"></script>
-   </body>
+  <script src="app.js"></script>
+ </body>
 </html>
