@@ -183,7 +183,7 @@ function filterCountry(data){
 	searchGefahrenzustand = [];
 
   if (unkritisch.checked == true){searchGefahrenzustand.push("unkritisch")};
-	if (teilweise.checked == true){searchGefahrenzustand.push("teilweise")};
+	if (teilweise.checked == true){searchGefahrenzustand.push("teilweise kritisch")};
 	if (kritisch.checked == true){searchGefahrenzustand.push("kritisch")};
 
 	//Temperatur Suche
